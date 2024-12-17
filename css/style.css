@@ -1,4 +1,39 @@
 body{
     background-color: antiquewhite;
     color:darkblue;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header img{ /*EDITAR LA IMAGEN*/
+    margin: auto;
+    width: 30%;
+}
+
+nav {
+    background-color: #7a3131;
+}
+
+nav ul {
+    display: flex; 
+    justify-content: space-evenly; 
+    align-items: center; 
+    padding: 10px;
+    margin: 0; 
+    list-style: none; 
+}
+
+nav ul li {
+    padding: 5px;
+    width: 120px;
+    text-align: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #F8F8F4;
+    display: block;
+    transition: font-weight 0.2s ease;
+}
+
+nav ul li:hover {
+    font-weight: bold;
 }

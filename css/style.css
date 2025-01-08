@@ -1,5 +1,5 @@
 body{
-    background-color: antiquewhite;
+    background-color: rgb(235, 235, 235);
     color:darkblue;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -7,6 +7,26 @@ header img{ /*EDITAR LA IMAGEN*/
     margin: auto;
     width: 30%;
 }
+
+.language-switcher {
+    display: flex;
+    gap: 30px; /* Espacio entre las banderas */
+    margin-top: 10px; 
+    margin-right: 10px; 
+    padding-right: 10px; 
+    padding-top: 10px; 
+    align-items: center; 
+    justify-content: flex-end; /* Alineacion a la derecha */
+  }
+  
+  .flag {
+    width: 32px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .flag:hover {
+    transform: scale(1.1);
+  }
 
 nav {
     background-color: #7a3131;
@@ -18,16 +38,18 @@ nav ul {
     align-items: center; 
     padding: 10px;
     margin: 0; 
-    list-style: none; 
+    list-style: none;
 }
 
 nav ul li {
     padding: 5px;
     width: 120px;
     text-align: center;
+    position: relative;
 }
 
 nav ul li a {
+    display: block;
     text-decoration: none;
     color: #F8F8F4;
     display: block;
@@ -37,3 +59,40 @@ nav ul li a {
 nav ul li:hover {
     font-weight: bold;
 }
+
+  /*Estilo del contenedor del dropdown*/
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /*contenido del dropdown (inicialmente oculto)
+  Ver como arreglar el tema de que no puedo seleccionar ninguna opcion*/
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #eccaca;
+    min-width: 160px; /* Ancho del dropdown */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-left: -20px;
+    margin-top: 14px; 
+  }
+  
+  /*dentro del dropdown*/
+  .dropdown-content a {
+    color: #7a3131;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #7a3131;
+    color: #eccaca;
+  }
+  
+  /* Mostrar el contenido del dropdown cuando se hace hover sobre el contenedor */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }

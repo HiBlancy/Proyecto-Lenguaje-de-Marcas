@@ -8,14 +8,39 @@
 </head>
 <body>
   <header>
-    <img src="img/logo_principal.png" alt="img header" />
-    Aqui va la imagen, con el titulo, añadir los botones de los dos idiomas al final, botones en formato de imagen con su respectiva bandera Esapaña y Francia"
+
+    <a href="#">
+      <img src="img/logo_principal.png" alt="img header" />
+    </a>
+    
+    <div class="language-switcher">
+      <a href="#">
+        <img src="img/FrenchFlag.png" alt="" class="flag">
+      </a>
+      <a href="#">
+        <img src="img/SpainFlag.png" alt="" class="flag">
+      </a>
+    </div>
   </header>
   <nav>
       <ul>
         <li><a href="">Inicio</a></li>
-        <li><a href="">Destinaciones</a></li>
-        <li><a href="">Transporte</a></li>
+        <li class="dropdown">
+          <a href="" class="dropbtn">Destinaciones</a>
+          <div class="dropdown-content">
+            <a href="">España</a>
+            <a href="">Italia</a>
+            <a href="">Andorra</a>
+            <a href="">Otros</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="" class="dropbtn">Transportes</a>
+          <div class="dropdown-content">
+            <a href="">Bus</a>
+            <a href="">Avión</a>
+          </div>
+        </li>
         <li><a href="">Hoteles</a></li>
         <li><a href="">Sobre nosotros</a></li>
         <li><a href="">Contacto</a></li>

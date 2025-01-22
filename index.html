@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <header>
+  </head>
+  <body>
+    <header>
+      <a href="#">
+        <img src="img/logo_principal.png" alt="img header" />
+      </a>
 
-    <a href="#">
-      <img src="img/logo_principal.png" alt="img header" />
-    </a>
-    
-    <div class="language-switcher">
-      <a href="#">
-        <img src="img/FrenchFlag.png" alt="" class="flag">
-      </a>
-      <a href="#">
-        <img src="img/SpainFlag.png" alt="" class="flag">
-      </a>
-    </div>
-  </header>
-  <nav>
+      <div class="language-switcher">
+        <a href="#">
+          <img src="img/FrenchFlag.png" alt="" class="flag" />
+        </a>
+        <a href="#">
+          <img src="img/SpainFlag.png" alt="" class="flag" />
+        </a>
+      </div>
+    </header>
+    <button id="menuToggle">Menu</button>
+    <nav>
       <ul>
         <li><a href="">Inicio</a></li>
         <li class="dropdown">
@@ -45,36 +45,116 @@
         <li><a href="">Sobre nosotros</a></li>
         <li><a href="">Contacto</a></li>
       </ul>
-  </nav>
-  <main>
-    dentro de main
-    <aside>este es el aside</aside>
-    <section>esto es una seccion
-      <article>este es un articulo</article>
-    </section>
+    </nav>
+    <main>
+      <div class="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/HotelDonJuan.jpg" alt="Viaje 1" />
+            <p>Hotel Don Juan **** - Lloret de Mar</p>
+          </div>
+          <div class="carousel-item">
+            <img src="img/HotelLellaBaya.jpg" alt="Viaje 2" />
+            <p>Hotel Lella Baya**** - Hammamet</p>
+          </div>
+          <!--ANADIR ALGUNA IMAGEN MAS?-->
+        </div>
+        <button class="carousel-control prev">&lt;</button>
+        <button class="carousel-control next">&gt;</button>
+      </div>
 
-  </main>
-    
-    <div class = "body">
-        añadir imagenes en panatalla que sea un silder, y cada imagen sea el viaje 
-        plaificado con destino. Al entrar pondrá todas las fechas, el plan que hay e imagenes
+      <h2>PROMOCIONES</h2>
+      <div class="promotions">
+        <div class="promotion-item">
+          <img src="img/CarnavalEnVenecia.jpg" alt="Promoción 1" />
+          <h3>CARNAVAL EN VENECIA</h3>
+          <p>4 días, 3 noches</p>
+          <p><strong>Precio: 249€</strong></p>
+        </div>
+        <div class="promotion-item">
+          <img src="img/Portaventura.png" alt="Promoción 2" />
+          <h3>PORTAVENTURA</h3>
+          <p>4 días, 3 noches</p>
+          <p><strong>Precio: 299€</strong></p>
+        </div>
+        <div class="promotion-item">
+          <img src="img/MercadoNavideno.jpg" alt="Promoción 3" />
+          <h3>MERCADO NAVIDEÑO EN COSTA BRAVA</h3>
+          <p>4 días, 3 noches</p>
+          <p><strong>Precio: 249€</strong></p>
+        </div>
+      </div>
 
+      <div class="welcome-section">
+        <h2>¡Bienvenidos a Viajes Cascino!</h2>
+        <p>
+          Somos especialistas en la organización de viajes en autobús con salida
+          desde el sur de Francia y España. Nuestro objetivo es ofrecer
+          experiencias de viaje memorables adaptadas a todo tipo de grupos y
+          presupuestos. En Viajes Cascino, encontrará una amplia variedad de
+          opciones: desde escapadas económicas y circuitos turísticos, hasta
+          cruceros y estancias temáticas en destinos emblemáticos como
+          PortAventura o Disneyland.
+        </p>
+        <a href="catalogo.pdf" class="download-btn" download
+          >Descargar Catálogo</a
+        >
+      </div>
+    </main>
+
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const navMenu = document.querySelector("nav ul");
+
+      // Evento para alternar la visibilidad del menu principal
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+
+      // Añadir funcionalidad a los dropdowns en pantallas pequeñas
+      document.querySelectorAll(".dropdown > .dropbtn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          btn.nextElementSibling.classList.toggle("active");
+        });
+      });
+
+      const carousel = document.querySelector(".carousel-inner");
+      const items = document.querySelectorAll(".carousel-item");
+      const prevButton = document.querySelector(".carousel-control.prev");
+      const nextButton = document.querySelector(".carousel-control.next");
+
+      let currentIndex = 0;
+
+      function updateCarousel() {
+        const offset = -currentIndex * 100; // Mover por porcentaje
+        carousel.style.transform = `translateX(${offset}%)`;
+      }
+
+      prevButton.addEventListener("click", () => {
+        currentIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+        updateCarousel();
+      });
+
+      nextButton.addEventListener("click", () => {
+        currentIndex = currentIndex === items.length - 1 ? 0 : currentIndex + 1;
+        updateCarousel();
+      });
+    </script>
+    <div class="footer">
+      <img src="" alt="imagen logo footer" />
+      <ul>
+        <li>
+          <a href=""><img src="" alt="img facebook" /></a>
+        </li>
+        <li>
+          <a href=""><img src="" alt="imagen twitter" /></a>
+        </li>
+        <li>
+          <a href=""><img src="" alt="img linkedin" /></a>
+        </li>
+      </ul>
+      <p>&copy; 2025 Viatges Cascino S.L.U</p>
     </div>
-    <div class = "footer">
-        <img src="" alt="imagen logo footer" />
-        <ul>
-          <li>
-            <a href=""><img src="" alt="img facebook" /></a>
-          </li>
-          <li>
-            <a href=""><img src="" alt="imagen twitter" /></a>
-          </li>
-          <li>
-            <a href=""><img src="" alt="img linkedin" /></a>
-          </li>
-        </ul>
-        <p>&copy; 2024 Viatges Cascino S.L.U</p>
-    </div>
-    
-</body>
+  </body>
 </html>

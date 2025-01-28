@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Viajes Cascino</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
       <a href="#">
-        <img src="img/logo_principal.png" alt="img header" />
+        <img src="img/logo_principal.png" alt="Logo de Viajes Cascino" />
       </a>
 
       <div class="language-switcher">
@@ -43,7 +43,7 @@
         </li>
         <li><a href="">Hoteles</a></li>
         <li><a href="">Sobre nosotros</a></li>
-        <li><a href="">Contacto</a></li>
+        <li><a href="pag/contacto.html">Contacto</a></li>
       </ul>
     </nav>
     <main>
@@ -86,21 +86,34 @@
       </div>
 
       <div class="welcome-section">
-        <h2>¡Bienvenidos a Viajes Cascino!</h2>
-        <p>
-          Somos especialistas en la organización de viajes en autobús con salida
-          desde el sur de Francia y España. Nuestro objetivo es ofrecer
-          experiencias de viaje memorables adaptadas a todo tipo de grupos y
-          presupuestos. En Viajes Cascino, encontrará una amplia variedad de
-          opciones: desde escapadas económicas y circuitos turísticos, hasta
-          cruceros y estancias temáticas en destinos emblemáticos como
-          PortAventura o Disneyland.
-        </p>
-        <a href="catalogo.pdf" class="download-btn" download
-          >Descargar Catálogo</a
-        >
+        <div>
+          <h2>¡Bienvenidos a Viajes Cascino!</h2>
+          <p>
+            Somos especialistas en la organización de viajes en autobús con salida
+            desde el sur de Francia y España. Nuestro objetivo es ofrecer
+            experiencias de viaje memorables adaptadas a todo tipo de grupos y
+            presupuestos.
+          </p>
+        </div>
+        <a href="catalogo.pdf" class="download-btn" download>Descargar Catálogo</a>
       </div>
     </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="img/logo_footer.png" alt="Logo de Viajes Cascino" />
+        </div>
+        <div class="footer-info">
+          <p>Contacto: info@viajescascino.com</p>
+          <p>Teléfono: +34 123 456 789</p>
+          <p>Dirección: Calle Falsa 123, Barcelona, España</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Viatges Cascino S.L.U</p>
+      </div>
+    </footer>
 
     <script>
       const menuToggle = document.getElementById("menuToggle");
@@ -141,20 +154,5 @@
         updateCarousel();
       });
     </script>
-    <div class="footer">
-      <img src="" alt="imagen logo footer" />
-      <ul>
-        <li>
-          <a href=""><img src="" alt="img facebook" /></a>
-        </li>
-        <li>
-          <a href=""><img src="" alt="imagen twitter" /></a>
-        </li>
-        <li>
-          <a href=""><img src="" alt="img linkedin" /></a>
-        </li>
-      </ul>
-      <p>&copy; 2025 Viatges Cascino S.L.U</p>
-    </div>
   </body>
 </html>

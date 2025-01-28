@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Viajes Cascino</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/index.html">
+        <img src="/img/logo_principal.png" alt="Logo de Viajes Cascino" />
+      </a>
+      <div class="language-switcher">
+        <a href="#">
+          <img src="/img/FrenchFlag.png" alt="" class="flag" />
+        </a>
+        <a href="#">
+          <img src="/img/SpainFlag.png" alt="" class="flag" />
+        </a>
+      </div>
+    </header>
+
+    <button id="menuToggle">Menu</button>
+    <nav>
+      <ul>
+        <li><a href="/index.html">Inicio</a></li>
+        <li class="dropdown">
+          <a href="" class="dropbtn">Destinaciones</a>
+          <div class="dropdown-content">
+            <a href="">España</a>
+            <a href="">Italia</a>
+            <a href="">Andorra</a>
+            <a href="">Otros</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="" class="dropbtn">Transportes</a>
+          <div class="dropdown-content">
+            <a href="">Bus</a>
+            <a href="">Avión</a>
+          </div>
+        </li>
+        <li><a href="">Hoteles</a></li>
+        <li><a href="">Sobre nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h1>Contacto</h1>
+      <div id="contactForm">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Mensaje:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit">Enviar</button>
+      </div>
+
+      <!-- Mensaje de confirmación -->
+      <div id="confirmationMessage" style="display: none;">
+        <h2>¡Gracias por contactarnos!</h2>
+        <p>Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.</p>
+        <p><strong>Nombre:</strong> <span id="contactName"></span></p>
+        <p><strong>Email:</strong> <span id="contactEmail"></span></p>
+        <p><strong>Mensaje:</strong> <span id="contactMessage"></span></p>
+      </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="img/logo_footer.png" alt="Logo de Viajes Cascino" />
+          </div>
+          <div class="footer-info">
+            <p>Contacto: info@viajescascino.com</p>
+            <p>Teléfono: +34 123 456 789</p>
+            <p>Dirección: Calle Falsa 123, Barcelona, España</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Viatges Cascino S.L.U</p>
+        </div>
+      </footer>
+
+    <script>
+      // Mostrar el mensaje de confirmación si hay datos en la URL
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.toString()) {
+        document.getElementById("contactForm").style.display = "none";
+        document.getElementById("confirmationMessage").style.display = "block";
+
+        document.getElementById("contactName").textContent =
+          urlParams.get("name") || "No proporcionado";
+        document.getElementById("contactEmail").textContent =
+          urlParams.get("email") || "No proporcionado";
+        document.getElementById("contactMessage").textContent =
+          urlParams.get("message") || "No proporcionado";
+      }
+      const menuToggle = document.getElementById("menuToggle");
+      const navMenu = document.querySelector("nav ul");
+
+      // Evento para alternar la visibilidad del menu principal
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+
+      // Añadir funcionalidad a los dropdowns en pantallas pequeñas
+      document.querySelectorAll(".dropdown > .dropbtn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          btn.nextElementSibling.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>

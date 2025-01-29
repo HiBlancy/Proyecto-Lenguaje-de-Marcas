@@ -23,8 +23,8 @@ header {
   background-color: var(--text-color-light);
 }
 
-header img {
-  width: 30%;
+header .logo {
+  width: 100%;
 }
 
 /*Banderas para cambiar el idioma*/
@@ -119,12 +119,8 @@ nav ul li:hover {
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 100%;
   height: 450px;
-  margin: 0 auto;
   overflow: hidden;
-  background-color: #f8f8f4;
-  border-radius: 10px;
 }
 
 .carousel-inner {
@@ -135,7 +131,6 @@ nav ul li:hover {
 
 .carousel-item {
   flex: 0 0 100%;
-  text-align: center;
   position: relative;
 }
 
@@ -143,13 +138,20 @@ nav ul li:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px 10px 0 0;
 }
 
-.carousel-item p {
-  margin: 10px 0;
-  font-size: 1.2em;
-  color: var(--main-bg-color);
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: var(--hover-bg-color);
+  font-weight: bold;
+  padding: 10px;
+  padding-left: 100px;
+  font-size: 2dvh;
+  text-align: left;
 }
 
 .carousel-control {
@@ -157,7 +159,7 @@ nav ul li:hover {
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  color: var(--text-color-light);
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -170,8 +172,12 @@ nav ul li:hover {
 .carousel-control.next {
   right: 10px;
 }
-
 /*Promociones*/
+.promotions-title {
+  text-align: left;
+  margin: 30px 90px;
+}
+
 .promotions {
   display: flex;
   justify-content: space-around;
@@ -179,7 +185,6 @@ nav ul li:hover {
   gap: 20px;
   margin: 20px auto;
   padding: 10px;
-  max-width: 100%px;
 }
 
 .promotion-item {
@@ -201,7 +206,7 @@ nav ul li:hover {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
 }
 
 .promotion-item h3 {
@@ -218,32 +223,31 @@ nav ul li:hover {
 
 /*Seccion de bienvenida*/
 .welcome-section {
-  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #f7f7f7;
   padding: 40px 20px;
   margin: 20px auto;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  display: flex; /* Usamos flexbox para alinear el botón a la derecha */
-  align-items: center; /* Centramos verticalmente el botón con el texto */
-  justify-content: space-between; /* Espacio entre el texto y el botón */
+  max-width: 1200px;
 }
 
 .welcome-section h2 {
   font-size: 2.5em;
   color: var(--text-color-dark);
-  margin-bottom: 20px;
 }
 
 .welcome-section p {
   font-size: 1.2em;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 30px;
   line-height: 1.6;
-  max-width: 600px;
+  max-width: 900px;
 }
 
+/*Boton de descarga del catalogo*/
 .download-btn {
   background-color: var(--hover-bg-color);
   color: var(--text-color-dark);
@@ -274,12 +278,12 @@ nav ul li:hover {
   font-weight: bold;
 }
 
-h2 {
-  text-align: left;
-  margin-top: 30px;
-  margin-left: 30px;
+.download-btn .iconDownload{
+  width: 100px; /* Ajusta el tamaño según sea necesario */
+  height: auto; /* Mantiene la proporción de la imagen */
 }
 
+/*footer*/
 .footer {
   background-color: var(--main-bg-color);
   color: var(--text-color-light);
@@ -291,10 +295,12 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footer-logo img {
-  width: 100px;
+  width: 200px;
 }
 
 .footer-info {
@@ -306,7 +312,32 @@ h2 {
   font-size: 0.8em;
 }
 
+.footer-bottom a {
+  color: var(--text-color-light);
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
+
+  /*Cambia a una imagen del logo mas peque*/
+  .logo {
+    content: url("/img/Logo_peque.png");
+    width: 20%;
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .language-switcher {
+    margin-top: 10px;
+  }
+
   .dropdown-content {
     display: none;
     position: relative;
@@ -319,10 +350,8 @@ h2 {
   }
 
   nav ul {
-    display: none; /* ocultar menu principal por defecto */
-    flex-direction: column; /* menu vertical */
-    background-color: var(--main-bg-color);
-    transition: all 0.3s ease-in-out;
+    flex-direction: column;
+    display: none;
   }
 
   nav ul.active {
@@ -343,34 +372,38 @@ h2 {
   .carousel {
     height: 300px;
   }
-  h2 {
-    text-align: left; /* Título alineado a la izquierda */
-    margin-left: 30px;
-  }
 
   .welcome-section {
-    flex-direction: column; /* Coloca el botón debajo del texto */
-    text-align: center; /* Centra el texto en móviles */
+    flex-direction: column;
+    text-align: center;
   }
 
   .welcome-section p {
-    max-width: 100%; /* El texto ocupa todo el ancho en móviles */
+    max-width: 100%;
   }
 
   .download-btn {
-    margin-left: 0; /* Elimina el margen izquierdo en móviles */
-    margin-top: 20px; /* Añade espacio arriba del botón */
+    margin-top: 20px; 
   }
 }
 
 /* Estilos para el formulario de contacto */
+.contact-title h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: var(--main-bg-color);
+  text-align: left;
+  margin: 30px 90px;
+}
 #contactForm {
   background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
   max-width: 500px;
-  margin: 20px auto; /* Margen superior e inferior, y centrado horizontalmente */
+  width: 100%;
+  margin: 20px auto;
+  border: 1px solid #e0e0e0;
 }
 
 .form-group {
@@ -380,18 +413,27 @@ h2 {
 
 .form-group label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  font-size: 0.9em;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-color-dark);
+  font-size: 1em;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 0.9em;
+  padding: 12px;
+  border: 1px solid var(--hover-bg-color);
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+/*efecto de cuando se clica al formulario*/
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--main-bg-color);
+  box-shadow: 0px 0px 8px rgba(122, 49, 49, 0.2);
+  outline: none;
 }
 
 .form-group input[type="text"],
@@ -401,42 +443,17 @@ h2 {
 
 button[type="submit"] {
   background-color: var(--main-bg-color);
-  color: #fff;
-  padding: 10px 20px;
+  color: var(--text-color-light);
+  padding: 12px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 0.9em;
+  font-size: 1em;
   width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: #e04e4e;
-}
-
-/* Estilos para el mensaje de confirmación */
-#confirmationMessage {
-  background-color: #f7f7f7;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-}
-
-#confirmationMessage h2 {
+  background-color: var(--hover-bg-color);
   color: var(--main-bg-color);
-}
-
-.btn {
-  display: inline-block;
-  background-color: var(--main-bg-color);
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-.btn:hover {
-  background-color: #e04e4e;
 }

@@ -10,25 +10,22 @@
     <!-- Header -->
     <header>
       <a href="#">
-        <img src="img/logo_principal.png" alt="Logo de Viajes Cascino" />
+        <img src="img/Viatges-Cascino.png" alt="Logo" class="logo" />
       </a>
 
       <!--Aparatado de botoes de cambio de idioma-->
-      <!--Hace falta ajustar las banderas para que se mantengan arriba derecha-->
-      <!-- Imagen pequena al hacerse la pantalla mas peque?-->
       <div class="language-switcher">
         <a href="#">
-          <img src="img/FrenchFlag.png" alt="" class="flag" />
+          <img src="img/FrenchFlag.png" alt="Francés" class="flag" />
         </a>
         <a href="#">
-          <img src="img/SpainFlag.png" alt="" class="flag" />
+          <img src="img/SpainFlag.png" alt="Español" class="flag" />
         </a>
       </div>
     </header>
 
     <!-- Menu de navegación -->
     <!-- Hace falta cambiar el tema de menu que sea una hamburgesa-->
-    <!--Ajustar el menu en la izqueirda, al lado del logo-->
     <button id="menuToggle">Menu</button>
     <!--Arregalr el dropdown, que salga desde la caja y no del texto-->
     <nav>
@@ -58,17 +55,32 @@
     </nav>
     <main>
       <!-- Carousel -->
-      <!--Anadir 2 elementos mas-->
       <div class="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="img/HotelDonJuan.jpg" alt="Viaje 1" />
-            <!--Hacer que los textos aparezcan en las imagenes en la parte inferior con una tira translucida negra-->
-            <p>Hotel Don Juan **** - Lloret de Mar</p>
+            <div class="carousel-caption">
+              <p>Hotel Don Juan **** - Lloret de Mar</p>
+            </div>
           </div>
           <div class="carousel-item">
+            <img src="img/TossaDeMar.jpeg" alt="Viaje 2" />
+            <div class="carousel-caption">
+              <p>Tossa de Mar</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <!--cambair fotos-->
             <img src="img/HotelLellaBaya.jpg" alt="Viaje 2" />
-            <p>Hotel Lella Baya**** - Hammamet</p>
+            <div class="carousel-caption">
+              <p>Hotel Lella Baya**** - Hammamet</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/Barcelona.jpg" alt="Viaje 2" />
+            <div class="carousel-caption">
+              <p>Barcelona</p>
+            </div>
           </div>
         </div>
         <button class="carousel-control prev">&lt;</button>
@@ -76,9 +88,7 @@
       </div>
 
       <!-- Promociones -->
-      <!--Arreglar h2, queda como muy por alli-->
-      <!--Anadir 1 promocion mas-->
-      <h2>PROMOCIONES</h2>
+      <h2 class="promotions-title">PROMOCIONES</h2>
       <div class="promotions">
         <div class="promotion-item">
           <img src="img/CarnavalEnVenecia.jpg" alt="Promoción 1" />
@@ -99,89 +109,56 @@
           <p><strong>Precio: 249€</strong></p>
         </div>
         <div class="promotion-item">
-          <img src="img/MercadoNavideno.jpg" alt="Promoción 4" />
-          <h3>PROMOCION EXTRA</h3>
-          <p>4 días, 3 noches</p>
-          <p><strong>Precio: 249€</strong></p>
+          <img src="img/PlayaDeAro.jpg" alt="Promoción 4" />
+          <h3>PLAYA DE ARO</h3>
+          <p>6 días, 5 noches</p>
+          <p><strong>Precio: 349€</strong></p>
         </div>
       </div>
 
       <!-- Bienvenida -->
-      <!-- Capaz anadir alguna cosa y que ocupe un poco mas de pantalla en lo ancho -->
       <div class="welcome-section">
         <div>
           <h2>¡Bienvenidos a Viajes Cascino!</h2>
           <p>
-            Somos especialistas en la organización de viajes en autobús con
-            salida desde el sur de Francia y España. Nuestro objetivo es ofrecer
-            experiencias de viaje memorables adaptadas a todo tipo de grupos y
-            presupuestos.
+            Somos especialistas en la organización de viajes en autocar desde el
+            sur de Francia y España. Ofrecemos estancias a precios asequibles,
+            circuitos, cruceros, viajes temáticos como Port Aventura, Disney,
+            así como eventos deportivos y organización de torneos (fútbol,
+            voleibol, etc.). También organizamos seminarios y viajes por toda
+            Europa. Si perteneces a una asociación, un club, un comité de
+            empresa o un grupo de amigos, podemos realizar un estudio
+            personalizado para ti.
           </p>
+          <p>Estamos a tu disposición para cualquier consulta.</p>
+          <p>¡Hasta pronto!</p>
         </div>
         <div class="download-btn">
           <p>Descarga</p>
           <h3>Catálogo 2025</h3>
-          <!--INCLUIR ICONO DESCARGA Y DESCARGA DEL CATOLOGO??-->
+          <img src="/img/IconoDescarga.png" alt="" class="iconDownload" />
         </div>
       </div>
     </main>
 
     <!-- Footer -->
-    <!-- Hacer el footer mas peque y distribuir diferente los textos-->
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-logo">
-          <!--Incluir imagen del logo totalmente blanca-->
-          <img src="img/logo_footer.png" alt="Logo de Viajes Cascino" />
+          <img src="img/LogoBlanco.png" alt="Logo de Viajes Cascino" />
         </div>
         <div class="footer-info">
           <p>yohan@viatgescascino.fr</p>
           <p>0033 662 80 89 08</p>
-          <p>Dirección: Calle Falsa 123, Barcelona, España</p>
+          <p>Calle Falsa 123, Barcelona, España</p>
         </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2025 Viatges Cascino S.L.U</p>
+        <a href="#">Aviso legal</a> | <a href="#">Uso de cookies</a>
       </div>
-      <!--Anadir dos botones
-      Aviso legal
-      Uso de cookies-->
     </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const menuToggle = document.getElementById("menuToggle");
-        const navMenu = document.querySelector("nav ul");
-
-        // Alternar menú en móviles
-        menuToggle.addEventListener("click", () => {
-          navMenu.classList.toggle("active");
-        });
-
-        // Carrusel
-        const carousel = document.querySelector(".carousel-inner");
-        const items = document.querySelectorAll(".carousel-item");
-        const prevButton = document.querySelector(".carousel-control.prev");
-        const nextButton = document.querySelector(".carousel-control.next");
-        let currentIndex = 0;
-
-        function updateCarousel() {
-          const offset = -currentIndex * 100;
-          carousel.style.transform = `translateX(${offset}%)`;
-        }
-
-        prevButton.addEventListener("click", () => {
-          currentIndex =
-            currentIndex === 0 ? items.length - 1 : currentIndex - 1;
-          updateCarousel();
-        });
-
-        nextButton.addEventListener("click", () => {
-          currentIndex =
-            currentIndex === items.length - 1 ? 0 : currentIndex + 1;
-          updateCarousel();
-        });
-      });
-    </script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>

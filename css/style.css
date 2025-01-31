@@ -45,7 +45,10 @@ header .logo {
 
 /*Navegacion*/
 nav {
+  position: sticky; /*Se queda peagdo si haces scroll*/
   background-color: var(--main-bg-color);
+  top: 0; /* Se pega en la parte superior */
+  z-index: 1000; 
 }
 
 nav ul {
@@ -84,6 +87,10 @@ nav ul li:hover {
   background-color: var(--hover-bg-color);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  width: 100%; /* Ajusta el ancho al 100% del contenedor padre */
+  top: 100%; /* Coloca el dropdown justo debajo del contenedor padre */
+  left: 0; /* Alinea el dropdown con el inicio del elemento padre */
+  background-color: var(--hover-bg-color);
 }
 
 /*dentro del dropdown*/
@@ -99,7 +106,6 @@ nav ul li:hover {
 .dropdown-content a:hover {
   background-color: var(--main-bg-color);
   color: var(--hover-bg-color);
-  display: block;
 }
 
 /* Mostrar el contenido del dropdown cuando se hace hover sobre el contenedor */
@@ -366,14 +372,28 @@ nav ul li:hover {
   }
 
   #menuToggle {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Espacio uniforme entre las líneas */
+    align-items: center;
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: var(--hover-bg-color);
+    top: 45px;
+    right: 25px;
+    background-color: var(--main-bg-color);
     border: none;
-    padding: 10px 15px;
-    font-size: 16px;
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  #menuToggle .line {
+    width: 30px; /* Ancho de cada línea */
+    height: 3.5px; /* Grosor de cada línea */
+    background-color: var(--text-color-light); /* Color de las líneas */
+    border-radius: 1px; /* Bordes redondeados */
+    margin-bottom: 5px; /* Reduce espacio entre líneas */
+    margin-top: 5px;
   }
 
   .carousel {

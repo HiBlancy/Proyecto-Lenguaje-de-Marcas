@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateLogo() {
     if (window.innerWidth <= 768) {
-      logo.src = "img/Logo_peque.png"; // Imagen para móviles
+      logo.src = "/img/Logo_peque.png"; // Imagen para móviles
     } else {
-      logo.src = "img/Viatges-Cascino.png"; // Imagen para escritorio
+      logo.src = "/img/Viatges-Cascino.png"; // Imagen para escritorio
     }
   }
 

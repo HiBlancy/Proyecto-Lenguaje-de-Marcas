@@ -62,7 +62,7 @@ nav ul {
 
 nav ul li {
   padding: 10px;
-  width: 120px;
+  width: 100%;
   text-align: center;
   position: relative;
 }
@@ -340,17 +340,20 @@ nav ul li:hover {
   /*Cambia a una imagen del logo mas peque*/
   .logo {
     content: url("/img/Logo_peque.png");
-    width: 20%;
+    width: 50%;
   }
   header {
     flex-direction: column;
     align-items: flex-start;
+    padding: 10px;
   }
 
   .language-switcher {
     margin-top: 10px;
+    gap: 15px;
   }
 
+  /*Ajustes del dropwdown */
   .dropdown-content {
     display: none;
     position: relative;
@@ -365,52 +368,120 @@ nav ul li:hover {
   nav ul {
     flex-direction: column;
     display: none;
+    padding: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    padding: 10px 20px;
   }
 
   nav ul.active {
     display: flex;
   }
 
+  /*Boton para el menu*/
   #menuToggle {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Espacio uniforme entre las líneas */
+    justify-content: center;
     align-items: center;
     position: absolute;
     top: 45px;
     right: 25px;
     background-color: var(--main-bg-color);
     border: none;
-    width: 50px; /* Ancho del botón */
-    height: 50px; /* Altura del botón */
+    width: 50px;
+    height: 50px;
     padding: 0;
     cursor: pointer;
   }
   
   #menuToggle .line {
-    width: 30px; /* Ancho de cada línea */
-    height: 3.5px; /* Grosor de cada línea */
-    background-color: var(--text-color-light); /* Color de las líneas */
-    border-radius: 1px; /* Bordes redondeados */
-    margin-bottom: 5px; /* Reduce espacio entre líneas */
+    width: 30px; 
+    height: 3.5px; 
+    background-color: var(--text-color-light); 
+    border-radius: 1px; 
+    margin-bottom: 5px; 
     margin-top: 5px;
   }
 
+  /*Carousel de imagenes*/
   .carousel {
-    height: 300px;
+    height: 250px;
   }
 
+  .carousel-caption {
+    padding: 5px;
+    font-size: 1.5dvh;
+  }
+
+  .carousel-control {
+    padding: 5px;
+  }
+
+  /*Promociones*/
+  .promotion-item {
+    margin-bottom: 20px;
+  }
+
+  .promotion-item h3 {
+    font-size: 1.2em;
+  }
+
+  .promotion-item p {
+    font-size: 0.9em;
+  }
+
+  /*Bienvenida*/
   .welcome-section {
     flex-direction: column;
     text-align: center;
+    padding: 20px;
+  }
+  .welcome-section h2 {
+    font-size: 2em;
   }
 
   .welcome-section p {
+    font-size: 1em;
     max-width: 100%;
   }
 
+  /*boton descarga del catalogo*/
   .download-btn {
     margin-top: 20px; 
+  }
+
+  .download-btn h3 {
+    font-size: 1.2em;
+  }
+
+  .download-btn p {
+    font-size: 0.9em;
+  }
+
+  .download-btn .iconDownload {
+    width: 70px;
+  }
+
+  /*Footer*/
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-logo img {
+    width: 150px;
+  }
+
+  .footer-info {
+    font-size: 0.8em;
+  }
+
+  .footer-bottom {
+    font-size: 0.7em;
   }
 }
 
@@ -485,6 +556,30 @@ button[type="submit"]:hover {
   color: var(--main-bg-color);
 }
 
+@media (max-width: 768px) {
+  /*Formulario de contacto*/
+  #contactForm {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .form-group label {
+    font-size: 0.9em;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+
+  button[type="submit"] {
+    font-size: 0.9em;
+    padding: 10px 15px;
+  }
+}
+
+
 /*Promociones general*/
 .promociones{
   padding: 40px 20px;
@@ -549,4 +644,38 @@ button[type="submit"]:hover {
   line-height: 1.6;
   color: #555;
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .promociones .migas-de-pan {
+    font-size: 0.8em;
+  }
+
+  .destination-title {
+    font-size: 2em;
+  }
+
+  .info-basica p {
+    font-size: 0.9em;
+  }
+
+  .dia h2 {
+    font-size: 1.2em;
+  }
+
+  .dia p {
+    font-size: 0.9em;
+  }
+
+  .itinerario {
+    padding: 15px;
+  }
+
+  .dia h2 {
+    font-size: 1.2em;
+  }
+
+  .dia p {
+    font-size: 0.9em;
+  }
 }

@@ -60,6 +60,27 @@
       <div class="contact-title">
         <h2>Contacto</h2>
       </div>
+      <div class="contact-box">
+        <!-- Texto a la izquierda -->
+        <div class="contact-info">
+          <p> Puedes ponerte en contacto con nosotros rellenando
+             este formulario o llamando a cualquiera de los 
+             siguientes números de teléfono. </p> 
+            <p> Si tienes alguna pregunta sobre nuestra 
+              agencia, un viaje en particular, un trayecto 
+              específico, o deseas organizar algo totalmente 
+              personalizado, no dudes en escribirnos o 
+              llamarnos. Estamos aquí para ayudarte y nos 
+              esforzaremos por ofrecerte la mejor experiencia 
+              posible. </p>
+              <p> <strong>Teléfonos de contacto</strong></p>
+          <ul>
+            <li>0033 662 80 89 08</li>
+            <li>0034 912 34 56 78</li>
+            <li>0034 934 56 78 90</li>
+          </ul>
+        </div>
+        <!-- Formulario de contacto -->
       <div id="contactForm">
         <div class="form-group">
           <label for="name">Nombre:</label>
@@ -72,6 +93,14 @@
         <div class="form-group">
           <label for="message">Mensaje:</label>
           <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+
+        <!-- Casilla de aceptación de políticas -->
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="acceptPolicies" name="acceptPolicies" required />
+           Acepto las <a href="" target="_blank">políticas de privacidad</a>.
+          </label>
         </div>
         <button type="submit">Enviar</button>
       </div>

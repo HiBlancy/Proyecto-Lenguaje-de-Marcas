@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
  // Carrusel de promociones
- const promoCarouselWrapper = document.querySelector(".carousel-wrapper");
  const promoItems = document.querySelectorAll(".promotion-itemP");
  const promoPrevButton = document.querySelector(".carousel-control.prevP");
  const promoNextButton = document.querySelector(".carousel-control.nextP");
@@ -56,8 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
  function updatePromoCarousel() {
     const itemWidth = promoItems[0].offsetWidth;
     const offset = -promoCurrentIndex * itemWidth;
-    promoCarouselWrapper.style.transform = `translateX(${offset}%)`;
- }
+    document.querySelector(".carousel-wrapper").style.transform = `translateX(${offset}px)`; }
 
  promoPrevButton.addEventListener("click", () => {
    promoCurrentIndex =
